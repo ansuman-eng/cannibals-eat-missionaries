@@ -94,9 +94,9 @@ int DFS(int **G)
         else
         {
           for(i=0;i<54;i++)
-                if(G[temp][i]==1&&!presentin(open,i,topo)&&!presentin(closed,i,topc))
+                if(G[temp][i]==1&&!presentin(open,i,topo)&&closed[i]==0)
                 {open[++topo]=i; parent[i]=temp;}
-          closed[++topc]=temp;
+          closed[temp]=1;
 
         }
     }
